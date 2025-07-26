@@ -1,0 +1,760 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>BCS GOOD HACK</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"/>
+  <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@500;700&family=Rajdhani:wght@400;500;700&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --primary-color: #d60000;
+      --primary-dark: #a00000;
+      --secondary-color: #9b5e4f;
+      --background-light: #ffecec;
+      --badge-color: #ffd5d5;
+      --card-shadow: 0 4px 15px rgba(0,0,0,0.1);
+      --success-color: #00aa55;
+      --info-color: #0077cc;
+      --warning-color: #ff9500;
+    }
+    
+    body {
+      margin: 0;
+      font-family: 'Rajdhani', sans-serif;
+      background: #f8f8f8;
+      color: #333;
+      min-height: 100vh;
+    }
+    
+    .header {
+      background: linear-gradient(135deg, var(--secondary-color), var(--primary-dark));
+      padding: 18px 20px;
+      color: white;
+      font-weight: bold;
+      display: flex;
+      align-items: center;
+      font-size: 1.2rem;
+      box-shadow: 0 3px 10px rgba(0,0,0,0.15);
+      position: relative;
+      z-index: 10;
+    }
+    
+    .header i {
+      margin-right: 12px;
+      font-size: 1.3rem;
+    }
+    
+    .top-section {
+      background: linear-gradient(160deg, var(--background-light), #fff);
+      padding: 25px 15px;
+      text-align: center;
+      border-bottom: 1px solid rgba(214, 0, 0, 0.1);
+      position: relative;
+      overflow: hidden;
+    }
+    
+    .top-section::before {
+      content: "";
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      height: 4px;
+      background: linear-gradient(90deg, var(--primary-color), var(--secondary-color));
+    }
+    
+    .top-section h1 {
+      color: var(--primary-color);
+      font-size: 2.4rem;
+      margin: 0;
+      font-family: 'Orbitron', sans-serif;
+      text-shadow: 0 2px 3px rgba(0,0,0,0.1);
+      letter-spacing: 1px;
+      position: relative;
+      z-index: 1;
+    }
+    
+    .badges {
+      margin-top: 15px;
+      display: flex;
+      justify-content: center;
+      flex-wrap: wrap;
+      gap: 10px;
+    }
+    
+    .badge {
+      display: inline-block;
+      padding: 7px 18px;
+      background: var(--badge-color);
+      color: var(--primary-color);
+      border-radius: 25px;
+      font-size: 0.95rem;
+      font-weight: 700;
+      box-shadow: 0 2px 4px rgba(0,0,0,0.05);
+      border: 1px solid rgba(214, 0, 0, 0.1);
+    }
+    
+    .card {
+      background: white;
+      border-radius: 16px;
+      padding: 22px;
+      margin: 20px;
+      box-shadow: var(--card-shadow);
+      transition: transform 0.2s ease, box-shadow 0.2s ease;
+      border: 1px solid rgba(0,0,0,0.05);
+    }
+    
+    .card:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 6px 20px rgba(0,0,0,0.12);
+    }
+    
+    .info-container {
+      display: grid;
+      gap: 15px;
+    }
+    
+    .info-box {
+      background: #fff;
+      padding: 18px 22px;
+      border-radius: 14px;
+      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+      display: flex;
+      align-items: center;
+      border-left: 5px solid var(--primary-color);
+      transition: transform 0.2s ease;
+    }
+    
+    .info-box:hover {
+      transform: translateX(3px);
+    }
+    
+    .info-box .info-label {
+      display: flex;
+      align-items: center;
+      flex-grow: 1;
+    }
+    
+    .info-box .info-value {
+      color: var(--primary-color);
+      font-weight: bold;
+      font-size: 1.4rem;
+      font-family: 'Orbitron', sans-serif;
+      margin-left: 15px;
+      text-align: right;
+      min-width: 80px;
+    }
+    
+    .info-box i {
+      margin-right: 15px;
+      color: var(--primary-color);
+      font-size: 1.4rem;
+      width: 24px;
+      text-align: center;
+    }
+    
+    .history-section {
+      margin: 20px;
+      margin-top: 10px;
+    }
+    
+    .section-header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      margin-bottom: 15px;
+    }
+    
+    .history-title {
+      font-weight: bold;
+      font-size: 1.25rem;
+      color: var(--primary-color);
+      display: flex;
+      align-items: center;
+      margin: 0;
+    }
+    
+    .history-title i {
+      margin-right: 10px;
+    }
+    
+    .history-count {
+      background: var(--primary-color);
+      color: white;
+      padding: 4px 10px;
+      border-radius: 20px;
+      font-size: 0.85rem;
+      font-weight: bold;
+    }
+    
+    .history-list {
+      display: grid;
+      gap: 12px;
+    }
+    
+    .history-item {
+      background: #fff;
+      border-radius: 12px;
+      padding: 16px 20px;
+      box-shadow: 0 3px 10px rgba(0,0,0,0.06);
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      font-size: 1.05rem;
+      transition: all 0.2s ease;
+      border: 1px solid rgba(0,0,0,0.03);
+    }
+    
+    .history-item:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+    }
+    
+    .history-period {
+      font-weight: 600;
+      color: #555;
+      letter-spacing: 0.5px;
+      display: flex;
+      align-items: center;
+      gap: 8px;
+    }
+    
+    .history-details {
+      display: flex;
+      align-items: center;
+      gap: 15px;
+    }
+    
+    .prediction-container {
+      display: flex;
+      flex-direction: column;
+      align-items: flex-end;
+      text-align: right;
+    }
+    
+    .prediction {
+      font-weight: bold;
+      font-size: 1.15rem;
+      font-family: 'Orbitron', sans-serif;
+    }
+    
+    .prediction.big {
+      color: var(--primary-color);
+    }
+    
+    .prediction.small {
+      color: var(--info-color);
+    }
+    
+    .status {
+      font-size: 0.85rem;
+      padding: 5px 12px;
+      border-radius: 12px;
+      font-weight: bold;
+      margin-top: 5px;
+      display: inline-block;
+      min-width: 70px;
+      text-align: center;
+    }
+    
+    .status.win {
+      background-color: rgba(0, 170, 85, 0.1);
+      color: var(--success-color);
+      border: 1px solid rgba(0, 170, 85, 0.3);
+    }
+    
+    .status.loss {
+      background-color: rgba(214, 0, 0, 0.1);
+      color: var(--primary-color);
+      border: 1px solid rgba(214, 0, 0, 0.3);
+    }
+    
+    .status.pending {
+      background-color: rgba(255, 149, 0, 0.1);
+      color: var(--warning-color);
+      border: 1px solid rgba(255, 149, 0, 0.3);
+    }
+    
+    .refresh-btn {
+      background: linear-gradient(135deg, var(--primary-color), var(--primary-dark));
+      color: white;
+      border: none;
+      padding: 15px 20px;
+      border-radius: 12px;
+      font-weight: bold;
+      font-size: 1.1rem;
+      margin: 25px 20px;
+      width: calc(100% - 40px);
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      gap: 10px;
+      cursor: pointer;
+      box-shadow: 0 4px 12px rgba(214, 0, 0, 0.25);
+      transition: all 0.2s ease;
+    }
+    
+    .refresh-btn:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 6px 16px rgba(214, 0, 0, 0.3);
+    }
+    
+    .refresh-btn:active {
+      transform: translateY(0);
+      box-shadow: 0 4px 10px rgba(214, 0, 0, 0.25);
+    }
+    
+    .pulse {
+      animation: pulse 1.5s infinite;
+    }
+    
+    @keyframes pulse {
+      0% { opacity: 1; }
+      50% { opacity: 0.6; }
+      100% { opacity: 1; }
+    }
+    
+    .loading {
+      display: inline-block;
+      width: 18px;
+      height: 18px;
+      border: 3px solid rgba(255,255,255,0.3);
+      border-radius: 50%;
+      border-top-color: white;
+      animation: spin 1s ease-in-out infinite;
+    }
+    
+    @keyframes spin {
+      to { transform: rotate(360deg); }
+    }
+    
+    .prediction-card {
+      background: linear-gradient(135deg, rgba(214,0,0,0.08), rgba(255,255,255,0.2));
+      border: 1px solid rgba(214,0,0,0.1);
+    }
+    
+    /* Animation for new prediction */
+    @keyframes slideIn {
+      from { transform: translateY(20px); opacity: 0; }
+      to { transform: translateY(0); opacity: 1; }
+    }
+    
+    .slide-in {
+      animation: slideIn 0.4s ease-out forwards;
+    }
+    
+    /* Glow effect for current prediction */
+    @keyframes glow {
+      0% { box-shadow: 0 0 5px rgba(214, 0, 0, 0.3); }
+      50% { box-shadow: 0 0 20px rgba(214, 0, 0, 0.5); }
+      100% { box-shadow: 0 0 5px rgba(214, 0, 0, 0.3); }
+    }
+    
+    .glow {
+      animation: glow 2s infinite;
+    }
+    
+    /* Responsive adjustments */
+    @media (max-width: 480px) {
+      .top-section h1 {
+        font-size: 2rem;
+      }
+      
+      .card {
+        padding: 18px;
+        margin: 15px;
+      }
+      
+      .info-box {
+        padding: 16px 18px;
+      }
+      
+      .info-box .info-value {
+        font-size: 1.3rem;
+      }
+      
+      .history-item {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 12px;
+      }
+      
+      .history-details {
+        width: 100%;
+        justify-content: space-between;
+      }
+      
+      .prediction-container {
+        align-items: flex-end;
+        width: 100%;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <div class="header">
+    <i class="fas fa-arrow-left"></i> @BcS_RaiFuL
+  </div>
+
+  <div class="top-section">
+    <h1>RAIFUL GOOD SERVER</h1>
+    <div class="badges">
+      <span class="badge">VERSION 3.0</span>
+      <span class="badge">AI POWERED</span>
+      <span class="badge">ULTRA PRECISION</span>
+    </div>
+  </div>
+
+  <div class="card prediction-card glow">
+    <div class="info-container">
+      <div class="info-box">
+        <div class="info-label">
+          <i class="fas fa-calendar-alt"></i>
+          <span></span>
+        </div>
+        <div class="info-value" id="currentPeriod">--</div>
+      </div>
+      
+      <div class="info-box">
+        <div class="info-label">
+          <i class="fas fa-clock"></i>
+          <span></span>
+        </div>
+        <div class="info-value" id="countdown">--</div>
+      </div>
+      
+      <div class="info-box">
+        <div class="info-label">
+          <i class="fas fa-bullseye"></i>
+          <span></span>
+        </div>
+        <div class="info-value" id="prediction">--</div>
+      </div>
+    </div>
+  </div>
+
+  <button class="refresh-btn" id="refreshBtn">
+    <i class="fas fa-sync-alt"></i> 
+    <span id="refreshText">REFRESH DATA</span>
+    <div class="loading" id="refreshSpinner" style="display: none;"></div>
+  </button>
+
+  <div class="history-section">
+    <div class="section-header">
+      <div class="history-title">
+        <i class="fas fa-history"></i>HISTORY
+      </div>
+      <div class="history-count" id="historyCount">0</div>
+    </div>
+    
+    <div class="history-list" id="historyItems">
+      <!-- History items will be inserted here -->
+    </div>
+  </div>
+
+  <script>
+    let historyData = [];
+    let currentPeriod = null;
+    let lastFetchedPeriod = null;
+    let currentPrediction = null;
+    let countdownInterval = null;
+    let secondsToUpdate = 60; // Initialize with 60 seconds
+    let isRefreshing = false;
+
+    // Initialize the app
+    document.addEventListener('DOMContentLoaded', function() {
+      updatePrediction();
+      startCountdown(); // Start countdown immediately
+      setInterval(updatePrediction, 1000);
+      
+      // Add click event for refresh button
+      document.getElementById('refreshBtn').addEventListener('click', function() {
+        if (!isRefreshing) {
+          manualRefresh();
+        }
+      });
+    });
+
+    // Function to get last 5 digits of period
+    function getLast5Digits(period) {
+      if (!period) return '--';
+      const str = period.toString();
+      return str.length <= 5 ? str : str.slice(-5);
+    }
+
+    // Function to fetch game result
+    async function fetchGameResult() {
+      try {
+        const payload = {
+          pageSize: 10,
+          pageNo: 1,
+          typeId: 1,
+          language: 0,
+          random: "4a0522c6ecd8410496260e686be2a57c",
+          signature: "334B5E70A0C9B8918B0B15E517E2069C",
+          timestamp: Math.floor(Date.now() / 1000)
+        };
+
+        let response = await fetch("https://api.bdg88zf.com/api/webapi/GetNoaverageEmerdList", {
+          method: "POST",
+          headers: { "Content-Type": "application/json" },
+          body: JSON.stringify(payload)
+        });
+
+        if (!response.ok) {
+          throw new Error(`HTTP error! Status: ${response.status}`);
+        }
+
+        let data = await response.json();
+        let latestResult = data?.data?.list?.[0];
+        if (latestResult) {
+          return { 
+            period: latestResult.issueNumber, 
+            result: latestResult.number,
+            timestamp: Math.floor(Date.now() / 1000)
+          };
+        } else {
+          throw new Error("No data found in the API response");
+        }
+      } catch (error) {
+        console.error("Error fetching game result:", error);
+        return null;
+      }
+    }
+
+    // Manual refresh function
+    async function manualRefresh() {
+      isRefreshing = true;
+      document.getElementById('refreshText').textContent = "REFRESHING";
+      document.getElementById('refreshSpinner').style.display = 'block';
+      
+      try {
+        await updatePrediction(true); // Force update
+      } catch (error) {
+        console.error("Refresh failed:", error);
+      } finally {
+        setTimeout(() => {
+          document.getElementById('refreshText').textContent = "REFRESH DATA";
+          document.getElementById('refreshSpinner').style.display = 'none';
+          isRefreshing = false;
+        }, 1000);
+      }
+    }
+
+    // Enhanced prediction algorithm with multiple strategies
+    function advancedPrediction(history) {
+      if (history.length < 3) return "BIG"; // Default prediction
+      
+      // Extract last 5 results (or all if less than 5)
+      const lastResults = history.slice(0, 5).map(item => item.result);
+      
+      // Strategy 1: Fibonacci Weighted Average
+      const fibWeights = [8, 5, 3, 2, 1]; // Fibonacci sequence weights
+      let fibSum = 0;
+      let totalWeight = 0;
+      
+      lastResults.forEach((result, index) => {
+        const weight = fibWeights[index] || 1;
+        fibSum += result * weight;
+        totalWeight += weight;
+      });
+      
+      const fibPrediction = Math.round(fibSum / totalWeight) % 10;
+      
+      // Strategy 2: Trend Reversal
+      let trendUp = 0;
+      for (let i = 1; i < lastResults.length; i++) {
+        if (lastResults[i] > lastResults[i-1]) trendUp++;
+        else if (lastResults[i] < lastResults[i-1]) trendUp--;
+      }
+      const trendPrediction = trendUp > 0 ? "SMALL" : "BIG";
+      
+      // Strategy 3: Hot/Cold Numbers
+      const numberCounts = {};
+      history.forEach(item => {
+        numberCounts[item.result] = (numberCounts[item.result] || 0) + 1;
+      });
+      
+      const sortedNumbers = Object.keys(numberCounts).sort((a, b) => numberCounts[b] - numberCounts[a]);
+      const hotPrediction = sortedNumbers[0] >= 5 ? "BIG" : "SMALL";
+      
+      // Combine strategies with weighted voting
+      const strategies = [
+        { prediction: fibPrediction >= 5 ? "BIG" : "SMALL", weight: 4 },
+        { prediction: trendPrediction, weight: 3 },
+        { prediction: hotPrediction, weight: 2 }
+      ];
+      
+      let bigVotes = 0;
+      let smallVotes = 0;
+      
+      strategies.forEach(strategy => {
+        if (strategy.prediction === "BIG") {
+          bigVotes += strategy.weight;
+        } else {
+          smallVotes += strategy.weight;
+        }
+      });
+      
+      // Final decision with slight bias towards the Fibonacci strategy
+      return bigVotes > smallVotes ? "BIG" : "SMALL";
+    }
+
+    // Auto-predict function using the advanced algorithm
+    function autoPredict(actualResult) {
+      let prediction = advancedPrediction(historyData);
+      return { type: prediction };
+    }
+
+    // Function to update prediction
+    async function updatePrediction(forceUpdate = false) {
+      let apiResult = await fetchGameResult();
+
+      if (!apiResult) {
+        document.getElementById("countdown").textContent = "Error";
+        return;
+      }
+
+      // Reset countdown on new period
+      if (apiResult.period !== lastFetchedPeriod) {
+        secondsToUpdate = 60; // Reset to 60 seconds for next update
+        document.getElementById("countdown").textContent = `${secondsToUpdate}s`;
+      }
+
+      // Only update prediction when a new period starts or forced
+      if (forceUpdate || apiResult.period !== lastFetchedPeriod) {
+        lastFetchedPeriod = apiResult.period;
+        currentPeriod = (BigInt(apiResult.period) + 1n).toString();
+
+        // Make new prediction using the advanced algorithm
+        let prediction = autoPredict(apiResult.result);
+        currentPrediction = prediction.type;
+
+        // Update UI with last 5 digits
+        document.getElementById("currentPeriod").textContent = getLast5Digits(currentPeriod);
+        
+        const predictionElement = document.getElementById("prediction");
+        predictionElement.textContent = currentPrediction;
+        predictionElement.style.color = currentPrediction === "BIG" ? "var(--primary-color)" : "var(--info-color)";
+        
+        // Add to history as pending
+        const newHistoryItem = { 
+          period: currentPeriod, 
+          result: apiResult.result, 
+          prediction: currentPrediction, 
+          status: "pending",
+          timestamp: apiResult.timestamp
+        };
+        
+        historyData.unshift(newHistoryItem);
+        updateHistory(newHistoryItem);
+        
+        // Check win/loss for previous prediction
+        checkWinLoss(apiResult);
+      }
+    }
+
+    // Function to check win/loss
+    async function checkWinLoss(apiResult) {
+      if (!apiResult) return;
+
+      // Find the previous prediction (current period - 1)
+      const previousPeriod = apiResult.period;
+      const actualResult = apiResult.result >= 5 ? "BIG" : "SMALL";
+      
+      historyData.forEach(item => {
+        if (item.period === previousPeriod) {
+          item.status = (item.prediction === actualResult) ? "win" : "loss";
+        }
+      });
+
+      updateHistory();
+    }
+
+    // Function to update history
+    function updateHistory(newItem = null) {
+      let historyContainer = document.getElementById("historyItems");
+      
+      // If new item is added, prepend it with animation
+      if (newItem) {
+        const historyItem = createHistoryItem(newItem);
+        historyItem.classList.add('slide-in');
+        historyContainer.insertBefore(historyItem, historyContainer.firstChild);
+      } else {
+        // Otherwise, refresh the entire list
+        historyContainer.innerHTML = "";
+        
+        // Only show the last 10 predictions for better UX
+        const displayHistory = historyData.slice(0, 10);
+        
+        displayHistory.forEach(item => {
+          historyContainer.appendChild(createHistoryItem(item));
+        });
+      }
+      
+      // Update history count
+      document.getElementById("historyCount").textContent = historyData.filter(item => item.status !== "pending").length;
+    }
+
+    // Helper function to create history item element
+    function createHistoryItem(item) {
+      const historyItem = document.createElement("div");
+      historyItem.className = "history-item";
+      
+      let statusClass = "";
+      let statusText = "";
+      let predictionClass = item.prediction.toLowerCase();
+      let predictionIcon = item.prediction === "BIG" ? "fa-arrow-up" : "fa-arrow-down";
+      
+      if (item.status === "win") {
+        statusClass = "win";
+        statusText = "WIN";
+      } else if (item.status === "loss") {
+        statusClass = "loss";
+        statusText = "LOSS";
+      } else {
+        statusClass = "pending";
+        statusText = "PENDING";
+      }
+      
+      historyItem.innerHTML = `
+        <div class="history-period">
+          <i class="fas fa-hashtag"></i>
+          ${getLast5Digits(item.period)}
+        </div>
+        <div class="history-details">
+          <div class="prediction ${predictionClass}">
+            <i class="fas ${predictionIcon}"></i>
+            ${item.prediction}
+          </div>
+          <div class="prediction-container">
+            <div class="status ${statusClass}">${statusText}</div>
+          </div>
+        </div>
+      `;
+      
+      return historyItem;
+    }
+
+    // Countdown timer for next update
+    function startCountdown() {
+      if (countdownInterval) clearInterval(countdownInterval);
+      
+      // Initialize countdown display
+      document.getElementById("countdown").textContent = `${secondsToUpdate}s`;
+      
+      countdownInterval = setInterval(() => {
+        secondsToUpdate--;
+        document.getElementById("countdown").textContent = `${secondsToUpdate}s`;
+        
+        if (secondsToUpdate <= 0) {
+          secondsToUpdate = 60;
+          updatePrediction(); // Force update when countdown reaches 0
+        }
+      }, 1000);
+    }
+  </script>
+</body>
+</html>
